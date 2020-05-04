@@ -9,6 +9,7 @@ services:
     command: /bin/sh -c "rm -f tmp/pids/server.pid && rails s -p 3000 -b '0.0.0.0'"
     volumes:
       - .:/app
+      - todoapp-bundle:/usr/local/bundle
     ports:
       - 3000:3000
     links:
@@ -23,3 +24,5 @@ services:
       - 3306:3306
 
 
+volumes:
+  todoapp-bundle:
